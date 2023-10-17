@@ -11,16 +11,19 @@
 Building the API client library requires:
 
 1. Scala
-2. SBT
+2. SBT 1.x.x
 
 ## Installation
 
-To add the API client library to your project put these contents in a
-file named `project/Build.scala`:
+To add the API client library to your sbt project specify it via `RootProject` in `build.sbt`
 
 ```scala
 lazy val iikoCloudApi = RootProject(uri("https://github.com/demig00d/iiko-cloud-api.git"))
+```
 
+then add dependsOn call
+
+```scala
 lazy val root = (project in file("."))
   .dependsOn(iikoCloudApi)
   .settings(...)
