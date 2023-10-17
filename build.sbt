@@ -7,7 +7,7 @@ lazy val root = (project in file("."))
       List(
         organization       := "ru.restomatik",
         scalaVersion       := "2.13.12",
-        crossScalaVersions := Seq(scalaVersion.value, "2.12.17"),
+        crossScalaVersions := Seq("2.13.12", "3.3.1"),
       )
     ),
     name := "iiko-cloud-api",
