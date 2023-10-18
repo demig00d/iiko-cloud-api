@@ -11,7 +11,7 @@
  */
 package ru.restomatik.client.model
 
-import ru.restomatik.client.model.IikoNetUserSex._
+import ru.restomatik.client.model.Gender._
 import ru.restomatik.client.model.PersonalDataConsentStatus._
 
 import java.util.UUID
@@ -38,7 +38,7 @@ case class CreateOrUpdateCustomerRequest(
   birthday: Option[String] = None,
   /* Customer email. Can be null. */
   email: Option[String] = None,
-  sex: Option[IikoNetUserSex] = None,
+  sex: Option[Gender] = None,
   consentStatus: Option[PersonalDataConsentStatus] = None,
   /* Customer get promo messages (email, sms). If null - unknown. */
   shouldReceivePromoActionsInfo: Option[Boolean] = None,

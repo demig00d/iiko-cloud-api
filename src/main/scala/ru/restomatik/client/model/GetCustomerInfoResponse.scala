@@ -11,7 +11,7 @@
  */
 package ru.restomatik.client.model
 
-import ru.restomatik.client.model.IikoNetUserSex._
+import ru.restomatik.client.model.Gender._
 import ru.restomatik.client.model.PersonalDataConsentStatus._
 
 import java.util.UUID
@@ -40,7 +40,7 @@ case class GetCustomerInfoResponse(
   birthday: Option[String] = None,
   /* Guest email. Can be null. */
   email: Option[String] = None,
-  sex: Option[IikoNetUserSex] = None,
+  sex: Option[Gender] = None,
   consentStatus: Option[PersonalDataConsentStatus] = None,
   /* Guest anonymized. */
   anonymized: Option[Boolean] = None,

@@ -47,17 +47,15 @@ object JsonSupport extends SttpCirceApi with AutoDerivation with DateSerializers
   implicit val ErrorCodeEncoder: Encoder[ErrorCode.ErrorCode] = Encoder.encodeEnumeration(ErrorCode)
   implicit val FontStyleDecoder: Decoder[FontStyle.FontStyle] = Decoder.decodeEnumeration(FontStyle)
   implicit val FontStyleEncoder: Encoder[FontStyle.FontStyle] = Encoder.encodeEnumeration(FontStyle)
-  implicit val GenderDecoder: Decoder[Gender.Gender] = Decoder.decodeEnumeration(Gender)
-  implicit val GenderEncoder: Encoder[Gender.Gender] = Encoder.encodeEnumeration(Gender)
+  implicit val GenderDecoder: Decoder[Gender.Gender] = Decoder.decodeInt.emapTry {
+    case num if num >= 0 && num < 3 => Success(Gender(num))
+    case other                      => Failure(new Exception(s"Gender $other should be in 0..2 range"))
+  }
+  implicit val GenderEncoder: Encoder[Gender.Gender] = Encoder.encodeInt.contramap(_.id)
   implicit val HousesRangeTypeDecoder: Decoder[HousesRangeType.HousesRangeType] = Decoder.decodeEnumeration(HousesRangeType)
   implicit val HousesRangeTypeEncoder: Encoder[HousesRangeType.HousesRangeType] = Encoder.encodeEnumeration(HousesRangeType)
   implicit val IikoCardSearchScopeDecoder: Decoder[IikoCardSearchScope.IikoCardSearchScope] = Decoder.decodeEnumeration(IikoCardSearchScope)
   implicit val IikoCardSearchScopeEncoder: Encoder[IikoCardSearchScope.IikoCardSearchScope] = Encoder.encodeEnumeration(IikoCardSearchScope)
-  implicit val IikoNetUserSexDecoder: Decoder[IikoNetUserSex.IikoNetUserSex] = Decoder.decodeInt.emapTry {
-      case num if num >= 0 && num < 3 => Success(IikoNetUserSex(num))
-      case other                      => Failure(new Exception(s"IikoNetUserSex $other should be in 0..2 range"))
-  }
-  implicit val IikoNetUserSexEncoder: Encoder[IikoNetUserSex.IikoNetUserSex] = Encoder.encodeInt.contramap(_.id)
   implicit val OperationCodeDecoder: Decoder[OperationCode.OperationCode] = Decoder.decodeEnumeration(OperationCode)
   implicit val OperationCodeEncoder: Encoder[OperationCode.OperationCode] = Encoder.encodeEnumeration(OperationCode)
   implicit val OrderItemStatusDecoder: Decoder[OrderItemStatus.OrderItemStatus] = Decoder.decodeEnumeration(OrderItemStatus)
