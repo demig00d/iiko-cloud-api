@@ -15,7 +15,7 @@ package ru.restomatik.client.model
 
 object PersonalDataConsentStatus extends Enumeration {
     type PersonalDataConsentStatus = PersonalDataConsentStatus.Value
-    val `0` = Value("0")
-    val `1` = Value("1")
-    val `2` = Value("2")
+    val Unknown = Value(0)
+    val Given   = Value(1)
+    val Revoked = Value(2)
 }

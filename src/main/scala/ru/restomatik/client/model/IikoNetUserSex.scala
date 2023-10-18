@@ -15,7 +15,7 @@ package ru.restomatik.client.model
 
 object IikoNetUserSex extends Enumeration {
     type IikoNetUserSex = IikoNetUserSex.Value
-    val `0` = Value("0")
-    val `1` = Value("1")
-    val `2` = Value("2")
+    val NotSpecified = Value(0)
+    val Male    = Value(1)
+    val Female  = Value(2)
 }

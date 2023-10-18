@@ -14,6 +14,7 @@ package ru.restomatik.client.core
 import io.circe.generic.AutoDerivation
 import io.circe.{Decoder, Encoder}
 import ru.restomatik.client.model._
+import scala.util.{Failure, Success}
 import sttp.client3.circe.SttpCirceApi
 
 object JsonSupport extends SttpCirceApi with AutoDerivation with DateSerializers with AdditionalTypeSerializers {
@@ -52,8 +53,11 @@ object JsonSupport extends SttpCirceApi with AutoDerivation with DateSerializers
   implicit val HousesRangeTypeEncoder: Encoder[HousesRangeType.HousesRangeType] = Encoder.encodeEnumeration(HousesRangeType)
   implicit val IikoCardSearchScopeDecoder: Decoder[IikoCardSearchScope.IikoCardSearchScope] = Decoder.decodeEnumeration(IikoCardSearchScope)
   implicit val IikoCardSearchScopeEncoder: Encoder[IikoCardSearchScope.IikoCardSearchScope] = Encoder.encodeEnumeration(IikoCardSearchScope)
-  implicit val IikoNetUserSexDecoder: Decoder[IikoNetUserSex.IikoNetUserSex] = Decoder.decodeEnumeration(IikoNetUserSex)
-  implicit val IikoNetUserSexEncoder: Encoder[IikoNetUserSex.IikoNetUserSex] = Encoder.encodeEnumeration(IikoNetUserSex)
+  implicit val IikoNetUserSexDecoder: Decoder[IikoNetUserSex.IikoNetUserSex] = Decoder.decodeInt.emapTry {
+      case num if num >= 0 && num < 3 => Success(IikoNetUserSex(num))
+      case other                      => Failure(new Exception(s"IikoNetUserSex $other should be in 0..2 range"))
+  }
+  implicit val IikoNetUserSexEncoder: Encoder[IikoNetUserSex.IikoNetUserSex] = Encoder.encodeInt.contramap(_.id)
   implicit val OperationCodeDecoder: Decoder[OperationCode.OperationCode] = Decoder.decodeEnumeration(OperationCode)
   implicit val OperationCodeEncoder: Encoder[OperationCode.OperationCode] = Encoder.encodeEnumeration(OperationCode)
   implicit val OrderItemStatusDecoder: Decoder[OrderItemStatus.OrderItemStatus] = Decoder.decodeEnumeration(OrderItemStatus)
@@ -70,8 +74,11 @@ object JsonSupport extends SttpCirceApi with AutoDerivation with DateSerializers
   implicit val PaymentProcessingTypeEncoder: Encoder[PaymentProcessingType.PaymentProcessingType] = Encoder.encodeEnumeration(PaymentProcessingType)
   implicit val PaymentTypeKindDecoder: Decoder[PaymentTypeKind.PaymentTypeKind] = Decoder.decodeEnumeration(PaymentTypeKind)
   implicit val PaymentTypeKindEncoder: Encoder[PaymentTypeKind.PaymentTypeKind] = Encoder.encodeEnumeration(PaymentTypeKind)
-  implicit val PersonalDataConsentStatusDecoder: Decoder[PersonalDataConsentStatus.PersonalDataConsentStatus] = Decoder.decodeEnumeration(PersonalDataConsentStatus)
-  implicit val PersonalDataConsentStatusEncoder: Encoder[PersonalDataConsentStatus.PersonalDataConsentStatus] = Encoder.encodeEnumeration(PersonalDataConsentStatus)
+  implicit val PersonalDataConsentStatusDecoder: Decoder[PersonalDataConsentStatus.PersonalDataConsentStatus] = Decoder.decodeInt.emapTry {
+    case num if num >= 0 && num < 3 => Success(PersonalDataConsentStatus(num))
+    case other => Failure(new Exception(s"PersonalDataConsentStatus $other should be in 0..2 range"))
+  }
+  implicit val PersonalDataConsentStatusEncoder: Encoder[PersonalDataConsentStatus.PersonalDataConsentStatus] = Encoder.encodeInt.contramap(_.id)
   implicit val ProgramTypeDecoder: Decoder[ProgramType.ProgramType] = Decoder.decodeEnumeration(ProgramType)
   implicit val ProgramTypeEncoder: Encoder[ProgramType.ProgramType] = Encoder.encodeEnumeration(ProgramType)
   implicit val RefillTypeDecoder: Decoder[RefillType.RefillType] = Decoder.decodeEnumeration(RefillType)
