@@ -13,7 +13,6 @@ package ru.restomatik.client.api
 
 import ru.restomatik.client.core.JsonSupport._
 import ru.restomatik.client.model._
-import scala.util.{ Failure, Success }
 import sttp.client3._
 import sttp.model.Method
 

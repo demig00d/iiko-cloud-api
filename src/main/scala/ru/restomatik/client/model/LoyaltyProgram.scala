@@ -11,9 +11,9 @@
  */
 package ru.restomatik.client.model
 
-import ru.restomatik.client.model.ProgramType._
-import ru.restomatik.client.model.RefillType._
-import ru.restomatik.client.model.TemplateType._
+import ru.restomatik.client.model.ProgramType.ProgramType
+import ru.restomatik.client.model.RefillType.RefillType
+import ru.restomatik.client.model.TemplateType.TemplateType
 
 import java.util.UUID
 
