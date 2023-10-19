@@ -15,14 +15,13 @@ package ru.restomatik.client.model
 
 object TemplateType extends Enumeration {
     type TemplateType = TemplateType.Value
-    val `0` = Value("0")
-    val `1` = Value("1")
-    val `2` = Value("2")
-    val `3` = Value("3")
-    val `4` = Value("4")
-    val `5` = Value("5")
-    val `6` = Value("6")
-    val `7` = Value("7")
-    val `8` = Value("8")
-    val `9` = Value("9")
+    val None                         = Value(0)
+    val BonusProgram                 = Value(1)
+    val DiscountProgram              = Value(2)
+    val NthDishProgram               = Value(3)
+    val ManualOrderAnonymousDiscount = Value(4)
+    val AutoOrderAnonymousDiscount   = Value(5)
+    val AutoDishAnonymousDiscount    = Value(6)
+    val PromotionsProgram            = Value(7)
+    val NthDishPromotionsProgram     = Value(8)
 }

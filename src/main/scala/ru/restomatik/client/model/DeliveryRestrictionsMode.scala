@@ -18,7 +18,7 @@ package ru.restomatik.client.model
 
 object DeliveryRestrictionsMode extends Enumeration {
     type DeliveryRestrictionsMode = DeliveryRestrictionsMode.Value
-    val `0` = Value("0")
-    val `1` = Value("1")
-    val `2` = Value("2")
+    val `0` = Value(0)
+    val `1` = Value(1)
+    val `2` = Value(2)
 }
