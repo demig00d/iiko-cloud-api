@@ -42,7 +42,7 @@ class BanquetsReservesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/reserve/add_items")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(addOrderItemsToBanquetRequest)
       .response(asJson[CorrelationIdResponse])
@@ -66,7 +66,7 @@ class BanquetsReservesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/reserve/add_payments")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(addOrderPaymentsToBanquetRequest)
       .response(asJson[CorrelationIdResponse])
@@ -90,7 +90,7 @@ class BanquetsReservesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/reserve/available_organizations")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getOrganizationsRequest)
       .response(asJson[GetOrganizationsResponse])
@@ -114,7 +114,7 @@ class BanquetsReservesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/reserve/available_restaurant_sections")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getRestaurantSectionsRequest)
       .response(asJson[GetRestaurantSectionsResponse])
@@ -138,7 +138,7 @@ class BanquetsReservesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/reserve/available_terminal_groups")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getTerminalGroupsByOrganizationsRequest)
       .response(asJson[TerminalGroupsResponse])
@@ -162,7 +162,7 @@ class BanquetsReservesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/reserve/cancel")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(cancelReserveRequest)
       .response(asJson[CorrelationIdResponse])
@@ -186,7 +186,7 @@ class BanquetsReservesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/reserve/create")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(createReserveRequest)
       .response(asJson[ReserveResponse])
@@ -210,7 +210,7 @@ class BanquetsReservesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/reserve/restaurant_sections_workload")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getRestaurantSectionsWorkloadRequest)
       .response(asJson[GetRestaurantSectionsWorkloadResponse])
@@ -234,7 +234,7 @@ class BanquetsReservesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/reserve/status_by_id")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(reservesByIdRequest)
       .response(asJson[ReservesResponse])

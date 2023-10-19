@@ -40,7 +40,7 @@ class EmployeesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/employees/couriers/active_location/by_terminal")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(activeCourierLocationsByTerminalGroupRequest)
       .response(asJson[ActiveCourierLocationsResponse])
@@ -62,7 +62,7 @@ class EmployeesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/employees/couriers/active_location")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(couriersRequest)
       .response(asJson[ActiveCourierLocationsResponse])
@@ -84,7 +84,7 @@ class EmployeesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/employees/couriers/by_role")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(couriersAndCheckRoleRequest)
       .response(asJson[EmployeesWithRoleSignResponse])
@@ -106,7 +106,7 @@ class EmployeesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/employees/couriers/locations/by_time_offset")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(courierLocationsByTimeOffsetRequest)
       .response(asJson[CourierLocationsByTimeOffsetResponse])
@@ -128,7 +128,7 @@ class EmployeesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/employees/couriers")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(couriersRequest)
       .response(asJson[EmployeesResponse])
@@ -150,7 +150,7 @@ class EmployeesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/employees/info")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(employeeInfoRequest)
       .response(asJson[EmployeeInfoResponse])
@@ -174,7 +174,7 @@ class EmployeesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/employees/shift/clockin")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(openPersonalSessionRequest)
       .response(asJson[ChangePersonalSessionResponse])
@@ -198,7 +198,7 @@ class EmployeesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/employees/shift/clockout")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(closePersonalSessionRequest)
       .response(asJson[ChangePersonalSessionResponse])
@@ -220,7 +220,7 @@ class EmployeesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/employees/shift/is_open")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getPersonalSessionInfoRequest)
       .response(asJson[GetPersonalSessionInfoResponse])

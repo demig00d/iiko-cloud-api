@@ -40,7 +40,7 @@ class AddressesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/cities")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(citiesRequest)
       .response(asJson[CitiesResponse])
@@ -62,7 +62,7 @@ class AddressesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/regions")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(regionsRequest)
       .response(asJson[RegionsResponse])
@@ -84,7 +84,7 @@ class AddressesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/streets/by_city")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(streetsByCityRequest)
       .response(asJson[StreetsResponse])
@@ -106,7 +106,7 @@ class AddressesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/streets/by_id")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(streetsByIdRequest)
       .response(asJson[StreetsByIdResponse])

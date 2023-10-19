@@ -40,7 +40,7 @@ class NotificationsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/notifications/send")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(sendNotificationRequest)
       .response(asJson[CorrelationIdResponse])

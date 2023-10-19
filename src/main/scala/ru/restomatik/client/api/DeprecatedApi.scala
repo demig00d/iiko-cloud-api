@@ -42,7 +42,7 @@ class DeprecatedApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/check_create")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(createOrderRequest)
       .response(asJson[CheckCreateOrderResponse])
@@ -66,7 +66,7 @@ class DeprecatedApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/update_order_payments")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(updateOrderPaymentsRequest)
       .response(asJson[CorrelationIdResponse])
@@ -90,7 +90,7 @@ class DeprecatedApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/update_payments")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(updateOrderPaymentsRequest)
       .response(asJson[CorrelationIdResponse])
@@ -113,7 +113,7 @@ class DeprecatedApi(baseUrl: String) {
     basicRequest
       .method(Method.GET, uri"$baseUrl/api/1/organizations")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .response(asJson[GetSimpleOrganizationsResponse])
 

@@ -40,7 +40,7 @@ class WebhooksApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/webhooks/settings")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getWebHookSettingsRequest)
       .response(asJson[GetWebHookSettingsResponse])
@@ -62,7 +62,7 @@ class WebhooksApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/webhooks/update_settings")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(updateWebHookSettingsRequest)
       .response(asJson[CorrelationIdResponse])

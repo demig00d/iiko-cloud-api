@@ -42,7 +42,7 @@ class DiscountsAndPromotionsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/calculate")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(calculateCheckinRequest)
       .response(asJson[CalculateCheckinResponse])
@@ -66,7 +66,7 @@ class DiscountsAndPromotionsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/coupons/by_series")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(notActivatedCouponRequest)
       .response(asJson[NotActivatedCouponResponse])
@@ -90,7 +90,7 @@ class DiscountsAndPromotionsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/coupons/info")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(couponInfoRequest)
       .response(asJson[CouponInfoResponse])
@@ -114,7 +114,7 @@ class DiscountsAndPromotionsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/coupons/series")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(seriesWithNotActivatedCouponsRequest)
       .response(asJson[SeriesWithNotActivatedCouponsResponse])
@@ -138,7 +138,7 @@ class DiscountsAndPromotionsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/manual_condition")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getByOrganizationIdRequest)
       .response(asJson[GetManualConditionsResponse])
@@ -162,7 +162,7 @@ class DiscountsAndPromotionsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/program")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getProgramsRequest)
       .response(asJson[GetProgramsResponse])

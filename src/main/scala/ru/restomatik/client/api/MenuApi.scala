@@ -55,7 +55,7 @@ class MenuApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/combo/calculate")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(calculateComboPriceRequest)
       .response(asJson[CalculateComboPriceResponse])
@@ -79,7 +79,7 @@ class MenuApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/combo")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getCombosInfoRequest)
       .response(asJson[GetCombosInfoResponse])
@@ -101,7 +101,7 @@ class MenuApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/nomenclature")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(nomenclatureRequest)
       .response(asJson[NomenclatureResponse])
@@ -123,7 +123,7 @@ class MenuApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/stop_lists/check")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(checkStopListRequest)
       .response(asJson[CheckStopListResponse])
@@ -145,7 +145,7 @@ class MenuApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/stop_lists")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(stopListsRequest)
       .response(asJson[StopListsResponse])
@@ -167,7 +167,7 @@ class MenuApi(baseUrl: String) {
 //    basicRequest
 //      .method(Method.POST, uri"$baseUrl/api/2/menu/by_id")
 //      .contentType("application/json")
-//      .header("Authorization", authorization.toString)
+//      .header("Authorization", s"Bearer $authorization")
 //      .header("Timeout", timeout.toString)
 //      .body(menuRequest)
 //      .response(asJson[ExternalMenuPreset])
@@ -188,7 +188,7 @@ class MenuApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/2/menu")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .response(asJson[MenusDataResponse])
 

@@ -40,7 +40,7 @@ class OperationsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/commands/status")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getCommandStatusRequest)
       .response(asJson[GetCommandStatusResponse])

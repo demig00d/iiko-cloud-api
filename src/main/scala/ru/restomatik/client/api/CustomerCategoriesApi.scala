@@ -42,7 +42,7 @@ class CustomerCategoriesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer_category/add")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changeCategoryForCustomerRequest)
       .response(asJson[Unit])
@@ -66,7 +66,7 @@ class CustomerCategoriesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer_category")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getCategoriesRequest)
       .response(asJson[GetCategoriesResponse])
@@ -90,7 +90,7 @@ class CustomerCategoriesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer_category/remove")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changeCategoryForCustomerRequest)
       .response(asJson[Unit])

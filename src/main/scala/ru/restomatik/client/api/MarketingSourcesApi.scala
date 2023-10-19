@@ -42,7 +42,7 @@ class MarketingSourcesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/marketing_sources")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(marketingSourcesRequest)
       .response(asJson[MarketingSourcesResponse])

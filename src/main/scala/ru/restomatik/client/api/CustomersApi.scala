@@ -42,7 +42,7 @@ class CustomersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer/card/add")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(addMagnetCardRequest)
       .response(asJson[Unit])
@@ -66,7 +66,7 @@ class CustomersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer/card/remove")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(deleteMagnetCardRequest)
       .response(asJson[Unit])
@@ -90,7 +90,7 @@ class CustomersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer/create_or_update")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(createOrUpdateCustomerRequest)
       .response(asJson[CreateOrUpdateCustomerResponse])
@@ -114,7 +114,7 @@ class CustomersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer/info")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getCustomerInfoRequest)
       .response(asJson[GetCustomerInfoResponse])
@@ -138,7 +138,7 @@ class CustomersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer/program/add")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(addCustomerToProgramRequest)
       .response(asJson[AddCustomerToProgramResponse])
@@ -162,7 +162,7 @@ class CustomersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer/wallet/cancel_hold")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(cancelHoldMoneyRequest)
       .response(asJson[Unit])
@@ -186,7 +186,7 @@ class CustomersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer/wallet/chargeoff")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changeUserBalanceRequest)
       .response(asJson[Unit])
@@ -210,7 +210,7 @@ class CustomersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer/wallet/hold")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(holdMoneyRequest)
       .response(asJson[HoldMoneyResponse])
@@ -234,7 +234,7 @@ class CustomersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/customer/wallet/topup")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changeUserBalanceRequest)
       .response(asJson[Unit])

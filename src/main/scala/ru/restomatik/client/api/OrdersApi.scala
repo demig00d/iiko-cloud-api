@@ -42,7 +42,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/add_customer")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(addCustomerToTableOrderRequest)
       .response(asJson[CorrelationIdResponse])
@@ -66,7 +66,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/add_items")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(addOrderItemsRequest)
       .response(asJson[CorrelationIdResponse])
@@ -90,7 +90,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/add_payments")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(addOrderPaymentsRequest)
       .response(asJson[CorrelationIdResponse])
@@ -114,7 +114,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/by_id")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getTableOrdersByIdRequest)
       .response(asJson[TableOrdersResponse])
@@ -138,7 +138,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/by_table")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getTableOrdersByTableRequest)
       .response(asJson[TableOrdersResponse])
@@ -162,7 +162,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/change_payments")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changePaymentsRequest)
       .response(asJson[CorrelationIdResponse])
@@ -186,7 +186,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/close")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(closeTableOrderRequest)
       .response(asJson[CorrelationIdResponse])
@@ -210,7 +210,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/create")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(createTableOrderRequest)
       .response(asJson[TableOrderResponse])
@@ -234,7 +234,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/init_by_posOrder")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(initTableOrderByPosOrderRequest)
       .response(asJson[CorrelationIdResponse])
@@ -258,7 +258,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/init_by_table")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(initTableOrderRequest)
       .response(asJson[CorrelationIdResponse])
@@ -282,7 +282,7 @@ class OrdersApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/order/update_payments")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(updateOrderPaymentsRequest)
       .response(asJson[CorrelationIdResponse])

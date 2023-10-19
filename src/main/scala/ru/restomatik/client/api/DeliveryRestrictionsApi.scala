@@ -42,7 +42,7 @@ class DeliveryRestrictionsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/delivery_restrictions/allowed")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getAllowedRestrictionsRequest)
       .response(asJson[GetAllowedRestrictionsResponse])
@@ -66,7 +66,7 @@ class DeliveryRestrictionsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/delivery_restrictions")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(getDeliveryRestrictionsRequest)
       .response(asJson[GetDeliveryRestrictionsResponse])
@@ -90,7 +90,7 @@ class DeliveryRestrictionsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/delivery_restrictions/update")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(updateDeliveryRestrictionsRequest)
       .response(asJson[UpdateDeliveryRestrictionsResponse])

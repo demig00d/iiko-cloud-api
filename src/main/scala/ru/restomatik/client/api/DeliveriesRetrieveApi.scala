@@ -40,7 +40,7 @@ class DeliveriesRetrieveApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/by_delivery_date_and_phone")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(ordersByDeliveryDateAndPhoneRequest)
       .response(asJson[OrdersWithRevisionResponse])
@@ -62,7 +62,7 @@ class DeliveriesRetrieveApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/by_delivery_date_and_source_key_and_filter")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(ordersByDeliveryDateAndFilterRequest)
       .response(asJson[OrdersWithRevisionResponse])
@@ -84,7 +84,7 @@ class DeliveriesRetrieveApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/by_delivery_date_and_status")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(ordersByDeliveryDateAndStatusRequest)
       .response(asJson[OrdersWithRevisionResponse])
@@ -106,7 +106,7 @@ class DeliveriesRetrieveApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/by_id")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(ordersByIdRequest)
       .response(asJson[OrdersResponse])
@@ -128,7 +128,7 @@ class DeliveriesRetrieveApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/by_revision")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(ordersByRevisionRequest)
       .response(asJson[OrdersWithRevisionResponse])

@@ -42,7 +42,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/add_items")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(addOrderItemsRequest)
       .response(asJson[CorrelationIdResponse])
@@ -66,7 +66,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/add_payments")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(addOrderPaymentsRequest)
       .response(asJson[CorrelationIdResponse])
@@ -90,7 +90,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/cancel_confirmation")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(cancelDeliveryConfirmationRequest)
       .response(asJson[CorrelationIdResponse])
@@ -114,7 +114,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/cancel")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(cancelOrderRequest)
       .response(asJson[CorrelationIdResponse])
@@ -138,7 +138,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/change_comment")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changeDeliveryCommentRequest)
       .response(asJson[CorrelationIdResponse])
@@ -162,7 +162,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/change_complete_before")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changeCompleteBeforeRequest)
       .response(asJson[CorrelationIdResponse])
@@ -186,7 +186,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/change_delivery_point")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changeDeliveryPointRequest)
       .response(asJson[CorrelationIdResponse])
@@ -210,7 +210,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/change_operator")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changeDeliveryOperatorRequest)
       .response(asJson[CorrelationIdResponse])
@@ -234,7 +234,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/change_payments")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changePaymentsRequest)
       .response(asJson[CorrelationIdResponse])
@@ -258,7 +258,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/change_service_type")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(changeServiceTypeRequest)
       .response(asJson[CorrelationIdResponse])
@@ -282,7 +282,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/close")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(closeDeliveryOrderRequest)
       .response(asJson[CorrelationIdResponse])
@@ -306,7 +306,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/confirm")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(confirmDeliveryRequest)
       .response(asJson[CorrelationIdResponse])
@@ -330,7 +330,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/create")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(createOrderRequest)
       .response(asJson[OrderResponse])
@@ -354,7 +354,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/print_delivery_bill")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(printDeliveryBillRequest)
       .response(asJson[CorrelationIdResponse])
@@ -378,7 +378,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/update_order_courier")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(updateOrderCourierRequest)
       .response(asJson[CorrelationIdResponse])
@@ -402,7 +402,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/update_order_delivery_status")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(updateDeliveryStatusRequest)
       .response(asJson[CorrelationIdResponse])
@@ -426,7 +426,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/update_order_payments")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(updateOrderPaymentsRequest)
       .response(asJson[CorrelationIdResponse])
@@ -450,7 +450,7 @@ class DeliveriesCreateAndUpdateApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/update_order_problem")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(updateOrderProblemRequest)
       .response(asJson[CorrelationIdResponse])

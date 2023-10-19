@@ -42,7 +42,7 @@ class DictionariesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/cancel_causes")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(cancelCausesRequest)
       .response(asJson[CancelCausesResponse])
@@ -64,7 +64,7 @@ class DictionariesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/deliveries/order_types")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(orderTypesRequest)
       .response(asJson[OrderTypesResponse])
@@ -86,7 +86,7 @@ class DictionariesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/discounts")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(discountsRequest)
       .response(asJson[DiscountsResponse])
@@ -108,7 +108,7 @@ class DictionariesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/payment_types")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(paymentTypesRequest)
       .response(asJson[PaymentTypesResponse])
@@ -132,7 +132,7 @@ class DictionariesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/removal_types")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(removalTypesRequest)
       .response(asJson[RemovalTypesResponse])
@@ -155,7 +155,7 @@ class DictionariesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/tips_types")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .response(asJson[TipsTypesResponse])
 

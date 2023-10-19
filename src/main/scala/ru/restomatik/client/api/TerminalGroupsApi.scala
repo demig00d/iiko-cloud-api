@@ -40,7 +40,7 @@ class TerminalGroupsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/terminal_groups/awake")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(awakeTerminalGroupsRequest)
       .response(asJson[AwakeTerminalGroupsResponse])
@@ -62,7 +62,7 @@ class TerminalGroupsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/terminal_groups/is_alive")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(terminalGroupsIsAliveRequest)
       .response(asJson[TerminalGroupsIsAliveResponse])
@@ -84,7 +84,7 @@ class TerminalGroupsApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/terminal_groups")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(terminalGroupsRequest)
       .response(asJson[TerminalGroupsResponse])

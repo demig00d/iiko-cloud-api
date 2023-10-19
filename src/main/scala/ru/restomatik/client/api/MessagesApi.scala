@@ -42,7 +42,7 @@ class MessagesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/message/send_email")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(sendEmailRequest)
       .response(asJson[Unit])
@@ -66,7 +66,7 @@ class MessagesApi(baseUrl: String) {
     basicRequest
       .method(Method.POST, uri"$baseUrl/api/1/loyalty/iiko/message/send_sms")
       .contentType("application/json")
-      .header("Authorization", authorization.toString)
+      .header("Authorization", s"Bearer $authorization")
       .header("Timeout", timeout.toString)
       .body(sendSmsRequest)
       .response(asJson[Unit])
