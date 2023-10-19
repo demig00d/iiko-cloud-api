@@ -19,8 +19,8 @@ import java.util.UUID
 case class GetCustomerInfoByEmailRequest(
   /* Customer email. */
   email: Option[String] = None,
-  `type`: String,
   /* Organization id. */
-  organizationId: Option[UUID] = None
+  organizationId: Option[UUID] = None,
+  `type`: String = "email"
 )
 
